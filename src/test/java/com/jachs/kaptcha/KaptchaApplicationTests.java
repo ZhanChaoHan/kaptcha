@@ -14,15 +14,15 @@ import org.springframework.boot.test.context.SpringBootTest;
 import com.google.code.kaptcha.impl.DefaultKaptcha;
 
 @SpringBootTest
-class KaptchaApplicationTests {
-	@Autowired
-	DefaultKaptcha defaultKaptcha;
-	@Test
-	void contextLoads() throws FileNotFoundException, IOException {
-		String text=defaultKaptcha.createText();
-		BufferedImage bi= defaultKaptcha.createImage(text);
-		ImageIO.write(bi, "jpg", new FileOutputStream("e:\\a.jpg"));
-		System.out.println(text);
-	}
+public class KaptchaApplicationTests {
+    @Autowired
+    private DefaultKaptcha defaultKaptcha;
 
+    @Test
+    public void test1 () throws FileNotFoundException, IOException {
+        String text = defaultKaptcha.createText ();
+        BufferedImage bi = defaultKaptcha.createImage ( text );
+        ImageIO.write ( bi, "jpg", new FileOutputStream ( "e:\\a.jpg" ) );
+        System.out.println ( text );
+    }
 }
